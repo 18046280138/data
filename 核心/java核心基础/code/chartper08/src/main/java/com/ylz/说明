@@ -1,0 +1,22 @@
+关于runnable和callable的一点说明：
+一、异同点：
+同：都是多线程任务
+异：
+   1、runnable是run()方法，callable()是call()方法
+   2、runnable没有返回值，callable有返回值
+   3、runnable不可throws异常，只能内部try-catch,callable可以抛出异常
+
+二、Runnable使用地方
+1、Runnable可以new Thread(Runnable runnable),直接start()运行
+2、Runnable可以在ExecutorService.execute(Runnable command)，也是直接运行，没啥返回值等
+
+三、callable使用地方
+说明：Thread只能接受Runnable参数，FutureTask既实现Runnable接口，又实现Future接口，并且接收Callable为成员变量，所以
+     把callable封装成FutureTask放进Thread执行，这样又可以通过futureTask拿到返回值（futureTask.get()）和捕获异常。
+
+1、Callable可以new Thread(FutureTask<T> futureTask),直接start()运行
+
+四、ExecutorService三个submit方法
+    <T> Future<T> submit(Callable<T> task);
+    <T> Future<T> submit(Runnable task, T result);
+    Future<?> submit(Runnable task);

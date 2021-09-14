@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>core</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>chartper13</module>
+        <module>chartper14</module>
+        <module>chartper11</module>
+        <module>chartper09</module>
+        <module>chartper12</module>
+        <module>chartper10</module>
+        <module>chartper07</module>
+        <module>chartper08</module>
+        <module>chartper06</module>
+        <module>chartper15</module>
+        <module>chartper17</module>
+        <module>chartper16</module>
+        <module>chartper04</module>
+        <module>chartper05</module>
+        <module>chartper03</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
+</project>
