@@ -1,5 +1,7 @@
 package com.ylz.java;
 
+import java.util.HashMap;
+
 /*
  * 一、数组的概述
  * 1.数组的理解：数组(Array)，是多个相同类型数据按一定顺序排列的集合，并使用一个名字命名，
@@ -35,6 +37,7 @@ public class ArrayTest {
 		
 		//1. 一维数组的声明和初始化
 		int num;//声明
+		HashMap
 		num = 10;//初始化
 		int id = 1001;//声明 + 初始化
 		
