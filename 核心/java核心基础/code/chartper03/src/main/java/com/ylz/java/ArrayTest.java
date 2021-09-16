@@ -1,6 +1,9 @@
 package com.ylz.java;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Stack;
 
 /*
  * 一、数组的概述
@@ -37,7 +40,7 @@ public class ArrayTest {
 		
 		//1. 一维数组的声明和初始化
 		int num;//声明
-		HashMap
+		Stack
 		num = 10;//初始化
 		int id = 1001;//声明 + 初始化
 		
