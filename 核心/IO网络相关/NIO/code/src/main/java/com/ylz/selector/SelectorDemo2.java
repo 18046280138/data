@@ -38,7 +38,8 @@ public class SelectorDemo2 {
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
         //7 选择器进行轮询，进行后续操作
-        while(selector.select()>0) {
+        while(selector.select()>0) {//会阻塞，直到有channel is selected
+            System.out.println("进来了...");
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
             //遍历
             Iterator<SelectionKey> selectionKeyIterator = selectionKeys.iterator();

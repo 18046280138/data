@@ -1,0 +1,8 @@
+涉及到的类：
+AsynchronousChannel
+AsynchronousChannelGroup
+AsynchronousFileChannel
+AsynchronousServerSocketChannel
+AsynchronousSocketChannel
+CompletionHandler
+AsynchronousDatagramChannel(好像被移除了)

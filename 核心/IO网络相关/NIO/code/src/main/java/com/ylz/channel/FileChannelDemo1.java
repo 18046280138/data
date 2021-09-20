@@ -9,7 +9,7 @@ public class FileChannelDemo1 {
     //FileChannel读取数据到buffer中
     public static void main(String[] args) throws Exception {
         //创建FileChannel
-        RandomAccessFile aFile = new RandomAccessFile("d:\\atguigu\\01.txt","rw");
+        RandomAccessFile aFile = new RandomAccessFile("D:\\桌面\\新建文本文档.txt","rw");
         FileChannel channel = aFile.getChannel();
 
         //创建Buffer

@@ -21,11 +21,12 @@ public class ServerSocketChannelDemo {
         ssc.socket().bind(new InetSocketAddress(port));
 
         //设置非阻塞模式
-        ssc.configureBlocking(false);
+        ssc.configureBlocking(true);
 
         //监听有新链接传入
         while(true) {
             System.out.println("Waiting for connections");
+            //阻塞模式：阻塞住直到抛异常或者有新的连接进来，非阻塞模式：马上返回，如果没有新的连接，则返回null
             SocketChannel sc = ssc.accept();
             if(sc == null) { //没有链接传入
                 System.out.println("null");
