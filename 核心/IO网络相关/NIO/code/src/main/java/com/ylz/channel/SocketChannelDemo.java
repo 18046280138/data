@@ -1,14 +1,8 @@
 package com.ylz.channel;
 
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.SocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.DatagramChannel;
 import java.nio.channels.SocketChannel;
-import java.nio.charset.Charset;
 
 public class SocketChannelDemo {
 
@@ -20,10 +14,14 @@ public class SocketChannelDemo {
 //        socketChanne2.connect(new InetSocketAddress("www.baidu.com", 80));
 
         //设置阻塞和非阻塞
-        socketChannel.configureBlocking(false);
+        socketChannel.configureBlocking(true);
 
         //读操作
         ByteBuffer byteBuffer = ByteBuffer.allocate(16);
+        /**
+         * 非阻塞：不会阻塞，会往下执行
+         * 阻塞：  会阻塞，卡在这里，除非有数据读到
+         */
         socketChannel.read(byteBuffer);
         socketChannel.close();
         System.out.println("read over");

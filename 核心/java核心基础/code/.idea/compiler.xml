@@ -6,21 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="chartper10" />
-        <module name="chartper11" />
-        <module name="chartper09" />
-        <module name="chartper12" />
-        <module name="chartper13" />
-        <module name="chartper03" />
-        <module name="chartper14" />
-        <module name="chartper04" />
-        <module name="chartper15" />
-        <module name="chartper05" />
-        <module name="chartper16" />
         <module name="chartper06" />
+        <module name="chartper05" />
+        <module name="chartper04" />
+        <module name="chartper03" />
         <module name="chartper17" />
-        <module name="chartper07" />
+        <module name="chartper16" />
+        <module name="chartper15" />
+        <module name="chartper14" />
+        <module name="chartper13" />
+        <module name="chartper12" />
+        <module name="chartper11" />
+        <module name="chartper10" />
+        <module name="chartper09" />
         <module name="chartper08" />
+        <module name="chartper07" />
       </profile>
     </annotationProcessing>
   </component>

@@ -16,7 +16,6 @@ public class DatagramChannelDemo {
         DatagramChannel sendChannel = DatagramChannel.open();
         InetSocketAddress sendAddress =
                 new InetSocketAddress("127.0.0.1",9999);
-
         //发送
         while(true) {
             ByteBuffer buffer = ByteBuffer.wrap("发送atguigu".getBytes("UTF-8"));
@@ -37,18 +36,27 @@ public class DatagramChannelDemo {
 
         //buffer
         ByteBuffer receiveBuffer = ByteBuffer.allocate(1024);
+        /**
+         * 设置是否阻塞，如果不阻塞，会报空指针异常
+         */
+        receiveChannel.configureBlocking(true);
 
         //接收
         while(true) {
             receiveBuffer.clear();
 
+            //是否阻塞，阻塞状态的话，会在这里阻塞
             SocketAddress socketAddress = receiveChannel.receive(receiveBuffer);
+            System.out.println("接收到数据");
 
             receiveBuffer.flip();
 
             System.out.println(socketAddress.toString());
 
             System.out.println(Charset.forName("UTF-8").decode(receiveBuffer));
+            Thread.sleep(2000);
+            ByteBuffer buffer = ByteBuffer.wrap("回复".getBytes("UTF-8"));
+            receiveChannel.send(buffer,socketAddress);
         }
     }
 
@@ -58,11 +66,11 @@ public class DatagramChannelDemo {
         //打开DatagramChannel
         DatagramChannel connChannel = DatagramChannel.open();
         //绑定
-        connChannel.bind(new InetSocketAddress(9999));
+        connChannel.bind(new InetSocketAddress(9998));
 
-        //连接
+        //连接，只接受和发送9999的数据包
         connChannel.connect(new InetSocketAddress("127.0.0.1",9999));
-
+        connChannel.configureBlocking(false);
         //write方法
         connChannel.write(ByteBuffer.wrap("发送atguigu".getBytes("UTF-8")));
 
@@ -73,6 +81,8 @@ public class DatagramChannelDemo {
 
             readBuffer.clear();
 
+            System.out.println("准备接收数据...");
+            //阻塞模式的话，会阻塞,非阻塞的话就不会阻塞到这里
             connChannel.read(readBuffer);
 
             readBuffer.flip();

@@ -21,7 +21,7 @@ public class ServerSocketChannelDemo {
         ssc.socket().bind(new InetSocketAddress(port));
 
         //设置非阻塞模式
-        ssc.configureBlocking(true);
+        ssc.configureBlocking(false);
 
         //监听有新链接传入
         while(true) {
