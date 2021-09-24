@@ -83,4 +83,35 @@ public class BufferDemo1 {
 
     }
 
+    @Test
+    public void buffer03(){
+        //创建buffer
+        IntBuffer buffer = IntBuffer.allocate(8);
+
+        //buffer放
+        for (int i = 0; i < 4; i++) {
+            buffer.put(i);
+        }
+
+        //重置缓冲区
+        buffer.flip();
+
+        buffer.get();
+        buffer.get();
+        //获取
+//        while(buffer.hasRemaining()) {
+//            int value = buffer.get();
+//            System.out.print(value+" ");
+//        }
+
+        //再次写
+        for (int i = 2; i < 4; i++) {
+            buffer.put(i*2);
+        }
+        //获取
+        while(buffer.hasRemaining()) {
+            int value = buffer.get();
+            System.out.print(value+" ");
+        }
+    }
 }
